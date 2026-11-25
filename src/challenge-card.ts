@@ -59,8 +59,14 @@ export async function saveChallengeCard(terms: BetTerms, demo = false) {
 
     const bird = new Image()
     bird.src = pigeonPoster
-    const headline = '"Pixelify Sans Variable", monospace'
-    await Promise.all([bird.decode(), document.fonts.load(`700 64px ${headline}`)])
+    const headline = getComputedStyle(document.documentElement)
+        .getPropertyValue('--headline')
+        .trim()
+    const headlineText = `BET WITH FRIENDS ${terms.details?.title ?? ''}`
+    await Promise.all([
+        bird.decode(),
+        document.fonts.load(`700 64px ${headline}`, headlineText),
+    ])
 
     const ink = '#21182c'
     const paper = '#fffdf7'

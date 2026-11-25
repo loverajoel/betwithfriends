@@ -1,4 +1,5 @@
 import { pigeonLogo } from '../assets'
+import { appUrl } from '../app-url'
 import { useRef } from 'react'
 import { demoPlayers, isDemoPlayer, type DemoPlayer } from '../demo-ledger'
 import { partyLabel } from './format'
@@ -119,7 +120,7 @@ export function AppHeader(props: Props) {
                                     </option>
                                 ))}
                             </select>
-                            <a className="mode-link" href={location.pathname}>
+                            <a className="mode-link" href={appUrl(false).href}>
                                 Exit demo
                             </a>
                         </div>

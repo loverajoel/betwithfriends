@@ -33,6 +33,7 @@ import { primaryParty } from './primary-wallet'
 import { networkConfig } from './networks'
 import { playSound, saveSoundPreference, soundEnabled, type SoundCue } from './sounds'
 import './App.css'
+import { appUrl } from './app-url'
 
 function errorText(error: unknown): string {
     return error instanceof Error ? error.message : String(error)
@@ -407,8 +408,7 @@ export default function App({ demo }: { demo: boolean }) {
         })
 
     function inviteLink(bet: BetTerms) {
-        const url = new URL(location.pathname, location.origin)
-        if (demo) url.searchParams.set('demo', '1')
+        const url = appUrl(demo)
         url.searchParams.set('bet', JSON.stringify(bet))
         return url.toString()
     }
@@ -430,11 +430,10 @@ export default function App({ demo }: { demo: boolean }) {
     const walletConnected = status?.connection.isConnected ?? false
     const network = networkConfig(status?.network?.networkId)
     const currency = demo ? 'demo CC' : 'CC'
-    const modeHome = demo ? `${location.pathname}?demo=1` : location.pathname
     const readyCount = activeBets?.readyToJudge.length ?? 0
 
     function navigateTo(next: BetView) {
-        if (terms) history.replaceState(null, '', modeHome)
+        if (terms) history.replaceState(null, '', appUrl(demo))
         setView(next)
         setTerms(undefined)
         setDemoPick(undefined)

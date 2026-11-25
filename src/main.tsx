@@ -7,8 +7,16 @@ import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/pixelify-sans/index.css'
 
 import App from './App'
+import { retroTheme } from './app-url'
 
 import './index.css'
+import './retro.css'
+
+if (retroTheme) {
+    document.documentElement.dataset.theme = 'retro'
+} else {
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f6f1e8')
+}
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>

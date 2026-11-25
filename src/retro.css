@@ -1,0 +1,249 @@
+/* Copyright (c) 2025-2026 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved. */
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Modified for Bet with friends. */
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-weight: 400;
+    font-display: swap;
+    src: url('@fontsource/chakra-petch/files/chakra-petch-latin-400-normal.woff2')
+        format('woff2');
+    unicode-range: U+0030-0039;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-weight: 500;
+    font-display: swap;
+    src: url('@fontsource/chakra-petch/files/chakra-petch-latin-500-normal.woff2')
+        format('woff2');
+    unicode-range: U+0030-0039;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-weight: 600;
+    font-display: swap;
+    src: url('@fontsource/chakra-petch/files/chakra-petch-latin-600-normal.woff2')
+        format('woff2');
+    unicode-range: U+0030-0039;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    font-weight: 700;
+    font-display: swap;
+    src: url('@fontsource/chakra-petch/files/chakra-petch-latin-700-normal.woff2')
+        format('woff2');
+    unicode-range: U+0030-0039;
+}
+
+:root[data-theme='retro'] {
+    --desk: #5a2fd8;
+    --desk-2: #5129cc;
+    --face: #cfd2c6;
+    --lite: #f7f8f0;
+    --shade: #858a7b;
+    --ink: #17180f;
+    --amber: #ffb400;
+    --paper: #fdfdf6;
+    --drop: #1f0a66;
+    --headline: 'Chakra Petch', 'Pixelify Sans Variable', ui-monospace, monospace;
+    --bevel: inset 3px 3px 0 var(--lite), inset -3px -3px 0 var(--shade);
+    --gold-bevel: inset 3px 3px 0 #ffe69c, inset -3px -3px 0 #ae7400;
+    background: var(--desk);
+    font-family: var(--headline);
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+:root[data-theme='retro'] body {
+    background: conic-gradient(
+            var(--desk-2) 25%,
+            var(--desk) 0 50%,
+            var(--desk-2) 0 75%,
+            var(--desk) 0
+        )
+        0 0 / 8px 8px;
+}
+
+:root[data-theme='retro'] .app-shell {
+    width: min(100% - 48px, 1000px);
+    padding-top: 32px;
+}
+
+:root[data-theme='retro'] :is(.topbar, .panel, .bet-poster, .bet-nav) {
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background-color: var(--face);
+    box-shadow:
+        var(--bevel),
+        6px 6px 0 var(--drop);
+}
+
+:root[data-theme='retro'] .topbar {
+    margin-bottom: 16px;
+    padding: 8px 14px;
+}
+
+:root[data-theme='retro'] .brand strong {
+    color: inherit;
+}
+
+:root[data-theme='retro'] .brand {
+    letter-spacing: -0.025em;
+}
+
+:root[data-theme='retro'] .bet-poster {
+    background-color: #672bf5;
+    box-shadow: 6px 6px 0 var(--drop);
+}
+
+:root[data-theme='retro'] .poster-copy em {
+    color: #dcff58;
+}
+
+:root[data-theme='retro']
+    :is(.wizard-heading, .bet-directory-header, .bet-detail-header, .bet-directory > h2) {
+    border: 2px solid var(--ink);
+    padding: 8px 10px;
+    background: var(--amber);
+    box-shadow: var(--gold-bevel);
+}
+
+:root[data-theme='retro'] .wizard-heading {
+    gap: 8px;
+    padding: 5px 7px 5px 10px;
+}
+
+:root[data-theme='retro']
+    :is(.wizard-heading h2, .bet-directory-header h2, .bet-directory > h2) {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 500;
+}
+
+:root[data-theme='retro'] .bet-detail-header {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+}
+
+:root[data-theme='retro'] .bet-detail-header h2 {
+    font-weight: 600;
+}
+:root[data-theme='retro'] .bet-detail-header :is(.bet-deadline, .group-payout-note) {
+    margin: 4px 0 0;
+}
+
+:root[data-theme='retro']
+    :is(
+        .primary-button,
+        .secondary-button,
+        .quiet-button,
+        .text-button,
+        .sound-toggle,
+        .shuffle-button,
+        .bet-nav-button,
+        .bet-side-picker,
+        .demo-account > summary
+    ) {
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background: var(--face);
+    box-shadow: var(--bevel);
+    font-family: var(--headline);
+}
+
+:root[data-theme='retro']
+    :is(
+        .primary-button,
+        .bet-nav-button[aria-current='page'],
+        .bet-side-picker[data-own='true']
+    ) {
+    background: var(--amber);
+    box-shadow: var(--gold-bevel);
+}
+
+:root[data-theme='retro'] .primary-button:not(:disabled):hover {
+    background: #ffc638;
+}
+:root[data-theme='retro'] .sound-toggle[aria-pressed='true'] {
+    background: var(--paper);
+}
+
+:root[data-theme='retro'] .wizard .hero-actions button[aria-pressed='true'] {
+    color: var(--paper);
+    background: var(--desk);
+    box-shadow:
+        inset 3px 3px 0 var(--drop),
+        inset -3px -3px 0 #9272f1;
+}
+
+:root[data-theme='retro'] button:disabled {
+    color: #55594d;
+    background: #c2c5b9;
+    box-shadow: none;
+}
+
+:root[data-theme='retro']
+    :is(.bet-fields input, .bet-fields textarea, .demo-account-panel select) {
+    border-radius: 0;
+    background: var(--paper);
+    box-shadow:
+        inset 2px 2px 0 var(--shade),
+        inset -2px -2px 0 var(--lite);
+}
+
+:root[data-theme='retro']
+    :is(
+        .bet-side,
+        .bet-list-item,
+        .badge,
+        .side-chip,
+        .demo-account-panel,
+        .error-banner,
+        .prototype-note,
+        .poster-ticket
+    ) {
+    border-radius: 0;
+}
+
+:root[data-theme='retro'] :is(.bet-side, .demo-account-panel) {
+    background: var(--paper);
+}
+
+:root[data-theme='retro'] .bet-side[data-own='true'] {
+    background: var(--amber);
+}
+:root[data-theme='retro'] :is(.bet-back, .bet-tool) {
+    font-family: var(--headline);
+}
+:root[data-theme='retro'] .bet-nav {
+    gap: 3px;
+    padding: 4px;
+}
+:root[data-theme='retro'] footer a {
+    color: var(--paper);
+}
+
+@media (max-width: 800px) {
+    :root[data-theme='retro'] .app-shell {
+        width: min(100% - 32px, 600px);
+        padding-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root[data-theme='retro'] .app-shell {
+        width: calc(100% - 28px);
+    }
+    :root[data-theme='retro'] .topbar {
+        padding: 7px 8px;
+        gap: 6px;
+    }
+    :root[data-theme='retro'] .header-actions {
+        gap: 6px;
+    }
+    :root[data-theme='retro'] .demo-account > summary {
+        padding-inline: 5px;
+        column-gap: 5px;
+    }
+}
