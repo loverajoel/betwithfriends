@@ -1,3 +1,4 @@
+import { pigeonPoster } from '../assets'
 import type { CSSProperties } from 'react'
 
 type Origin = { x: number; y: number }
@@ -69,7 +70,7 @@ export function CoinCelebration({ show }: { show: CoinShow }) {
             ))}
             {show.pattern === 'pigeon' && (
                 <div className="coin-pigeon">
-                    <img src="/bet-pigeon.webp" width="960" height="640" alt="" />
+                    <img src={pigeonPoster} width="960" height="640" alt="" />
                     <span>PIGEON PAYDAY</span>
                 </div>
             )}

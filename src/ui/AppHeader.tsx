@@ -1,3 +1,4 @@
+import { pigeonLogo } from '../assets'
 import { useRef } from 'react'
 import { demoPlayers, isDemoPlayer, type DemoPlayer } from '../demo-ledger'
 import { partyLabel } from './format'
@@ -35,7 +36,7 @@ export function AppHeader(props: Props) {
             <span className="brand">
                 <img
                     className="brand-icon"
-                    src="/pigeon-logo.png"
+                    src={pigeonLogo}
                     alt=""
                     width="48"
                     height="48"

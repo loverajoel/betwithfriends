@@ -1,3 +1,4 @@
+import { pigeonPoster } from '../assets'
 import { useState } from 'react'
 
 export const prompts = [
@@ -46,7 +47,7 @@ export function BetPoster() {
             <img
                 key={boops}
                 className={boops ? 'poster-art booped' : 'poster-art'}
-                src="/bet-pigeon.webp"
+                src={pigeonPoster}
                 alt=""
                 width="960"
                 height="640"

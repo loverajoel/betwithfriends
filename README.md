@@ -52,3 +52,13 @@ shares its update ID with the explorer.
 - `src/demo-ledger.ts` implements the browser-local demo ledger.
 
 The Canton example code includes Apache 2.0 notices. See [LICENSE](LICENSE).
+
+## GitHub Pages
+
+In the repository’s **Settings → Pages**, choose **GitHub Actions** as the
+publishing source. The Pages workflow builds on pushes to `main` and uses
+the path configured for the Pages site. If you enable Pages after pushing,
+run the **GitHub Pages** workflow from the **Actions** tab.
+
+Demo Mode still stores its bets in the browser. For a live wallet setup,
+allow the published HTTPS origin in the wallet provider or gateway.

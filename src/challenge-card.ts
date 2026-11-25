@@ -1,3 +1,4 @@
+import { pigeonPoster } from './assets'
 import type { BetTerms } from './bet-ledger'
 import { sideLabel } from './bet-ledger'
 
@@ -57,7 +58,7 @@ export async function saveChallengeCard(terms: BetTerms, demo = false) {
     if (!ctx) throw new Error('This browser could not create a challenge card.')
 
     const bird = new Image()
-    bird.src = '/bet-pigeon.webp'
+    bird.src = pigeonPoster
     const headline = '"Pixelify Sans Variable", monospace'
     await Promise.all([bird.decode(), document.fonts.load(`700 64px ${headline}`)])
 
