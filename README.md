@@ -13,13 +13,13 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:8084](http://localhost:8084) for the wallet flow or
-[Demo Mode](http://localhost:8084/?demo=1) to try it without a wallet. Run
+Open [localhost:8084](http://localhost:8084) for the Canton wallet flow. Run
 `npm run build` to create a production bundle in `dist/`.
 
 ### Demo Mode
 
-Create a bet and open its invite in several tabs in the same browser. Use the
+Add `?demo` or `?demo=1` to the app URL to enter Demo Mode. Create a bet and
+open its invite in several tabs in the same browser. Use the
 account menu to switch demo players. Everyone can pick either side. The creator
 settles the bet after both sides have stakes. Winners get their stakes back and
 split the losing side’s pot. Demo balances and bets are stored in the browser.

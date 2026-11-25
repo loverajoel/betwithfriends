@@ -788,15 +788,6 @@ footer a:focus-visible {
     text-decoration: none;
 }
 
-.demo-entry {
-    display: flex;
-    width: fit-content;
-    margin: 8px auto -5px;
-    padding-inline: 8px;
-    font-size: 0.875rem;
-    text-decoration: underline;
-}
-
 .demo-account {
     position: relative;
 }

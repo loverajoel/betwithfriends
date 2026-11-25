@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/pixelify-sans/index.css'
 
 import App from './App'
-import { retroTheme } from './app-url'
+import { demoMode, retroTheme } from './app-url'
 
 import './index.css'
 import './retro.css'
@@ -20,6 +20,6 @@ if (retroTheme) {
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <App demo={new URLSearchParams(location.search).get('demo') === '1'} />
+        <App demo={demoMode} />
     </StrictMode>
 )

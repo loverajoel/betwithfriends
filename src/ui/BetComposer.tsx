@@ -1,5 +1,4 @@
 import type { Side } from '../bet-ledger'
-import { appUrl } from '../app-url'
 import { BetPoster } from './BetPoster'
 
 export type BetDraft = {
@@ -177,11 +176,6 @@ export function BetComposer(props: Props) {
                     </button>
                 ) : (
                     <p className="judge-note">Connect your wallet to review your bet.</p>
-                )}
-                {!demo && (
-                    <a className="mode-link demo-entry" href={appUrl(true).href}>
-                        Try demo without a wallet
-                    </a>
                 )}
             </section>
         </div>

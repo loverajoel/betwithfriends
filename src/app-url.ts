@@ -1,4 +1,8 @@
-export const retroTheme = new URLSearchParams(location.search).get('theme') !== 'modern'
+const params = new URLSearchParams(location.search)
+const demoParam = params.get('demo')
+
+export const demoMode = demoParam === '' || demoParam === '1'
+export const retroTheme = params.get('theme') !== 'modern'
 
 export function appUrl(demo: boolean) {
     const url = new URL(location.pathname, location.origin)
