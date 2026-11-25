@@ -1,0 +1,10 @@
+node_modules/
+dist/
+out-tsc/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.playwright-mcp/
+.DS_Store

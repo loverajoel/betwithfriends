@@ -1,0 +1,60 @@
+/* Copyright (c) 2025-2026 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved. */
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Modified for Bet with friends. */
+
+:root {
+    --desk: #5e2ce8;
+    --desk-2: #4d22bb;
+    --face: #eee7ff;
+    --lite: #fffefa;
+    --shade: #d7cdef;
+    --ink: #21182c;
+    --amber: #dcff58;
+    --paper: #fffdf7;
+    --drop: #21182c;
+    --pink: #ff879b;
+    --headline: 'Pixelify Sans Variable', ui-monospace, monospace;
+    font-family: system-ui, sans-serif;
+    color: var(--ink);
+    background: #f6f1e8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: radial-gradient(#30244222 1px, transparent 1px) 0 0 / 20px 20px;
+    line-height: 1.45;
+}
+
+:where(button, a, summary, input, textarea):focus-visible {
+    outline: 3px solid var(--desk);
+    outline-offset: 3px;
+}
+
+::selection {
+    color: var(--ink);
+    background: var(--amber);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .coin-celebration {
+        display: none;
+    }
+}
